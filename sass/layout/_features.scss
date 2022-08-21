@@ -1,0 +1,29 @@
+.picture-box {
+  width: 270px;
+  height: 120px;
+  border: 0px;
+  background-color: var(--primary-buttons-color);
+  @include flex(flex, center, center);
+  margin-bottom: 30px;
+}
+
+.feature__list {
+  gap: 30px;
+  display: flex;
+}
+
+.feature__item {
+  flex-basis: calc((100% - 3 * 30px) / 4);
+}
+
+.feature__subtitle {
+  color: var(--primary-text-color);
+  @include font(14px, null, 1.14, 0.03em, null);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.feature__text {
+  color: var(--secondary-text-color);
+  @include font(14px, null, 1.7, 0.03em, null);
+}

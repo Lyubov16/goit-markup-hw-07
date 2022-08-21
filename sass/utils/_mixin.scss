@@ -1,0 +1,27 @@
+@mixin transition($one, $two, $three, $time, $function) {
+  transition-property: $one, $two, $three;
+  transition-duration: $time;
+  transition-timing-function: $function;
+}
+
+@mixin font($fs, $fw, $lh, $ls, $ta) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  letter-spacing: $ls;
+  text-align: $ta;
+}
+
+@mixin flex($dp, $ai, $jc) {
+  display: $dp;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+@mixin position($p, $t, $r, $b, $l) {
+  position: $p;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+}

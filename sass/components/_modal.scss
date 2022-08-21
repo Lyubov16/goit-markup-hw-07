@@ -1,0 +1,182 @@
+.backdrop {
+  @include position(fixed, 0, null, null, null);
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop-color);
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  background-color: var(--primary-white-color);
+  width: 528px;
+  height: 581px;
+  border: 1px solid #000000;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  @include position(absolute, 50%, null, null, 50%);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 40px;
+  .backdrop.is-hidden & {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal__btn {
+  @include flex(flex, center, center);
+  @include position(absolute, 8px, 8px, null, null);
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary-white-color);
+  border: 1px solid var(--modal-btn-border-color);
+  border-radius: 50%;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
+}
+
+.modal__icon {
+  color: var(--primary-text-color);
+}
+
+.modal__title {
+  @include font(20px, 700, 1.15, 0.03em, center);
+  display: block;
+  color: var(--primary-text-color);
+  margin-bottom: 12px;
+}
+
+.form__field {
+  margin-bottom: 10px;
+}
+
+.form__input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--modal-input-border);
+  border-radius: 4px;
+  padding-left: 42px;
+  color: var(--primary-text-color);
+  font-weight: 400;
+  cursor: pointer;
+  outline: transparent;
+  transition: border-color 250ms var(--timing-function-cubic-bezier);
+
+  &:hover,
+  &:focus {
+    border-color: var(--accent-color);
+  }
+}
+
+.form__label {
+  @include font(12px, null, 1.17, 0.01em, null);
+  display: block;
+  margin-bottom: 4px;
+  color: var(--secondary-text-color);
+}
+
+.form__box {
+  position: relative;
+  /* margin-top: 4px; */
+}
+
+.form__icon {
+  @include position(absolute, 50%, null, null, 12px);
+  transform: translateY(-50%);
+  color: var(--primary-text-color);
+
+  transition: fill 250ms var(--timing-function-cubic-bezier);
+
+  .form__input:hover + &,
+  .form__input:focus + & {
+    fill: var(--accent-color);
+  }
+}
+
+.form__comment {
+  width: 100%;
+  height: 120px;
+  border: 1px solid var(--modal-input-border);
+  border-radius: 4px;
+  resize: none;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  outline: transparent;
+  display: block;
+  @include font(14px, null, 1.14, 0.01em, null);
+  color: var(--primary-text-color);
+
+  transition: border-color 250ms var(--timing-function-cubic-bezier);
+
+  &:hover,
+  &:focus {
+    border-color: var(--accent-color);
+  }
+  &::placeholder {
+    @include font(14px, null, 1.14, 0.01em, null);
+    color: var(--placeholder-color);
+  }
+}
+
+.checkbox {
+  margin-bottom: 30px;
+}
+
+.checkbox__icon {
+  fill: transparent;
+  .checkbox__check:checked + .checkbox__conditions & {
+    fill: var(--primary-white-color);
+  }
+}
+
+.checkbox__conditions {
+  @include font(14px, null, 1.7, 0.03em, null);
+  color: var(--secondary-text-color);
+  @include flex(flex, center, center);
+
+  span {
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--primary-text-color);
+    border-radius: 2px;
+    margin-right: 9px;
+    @include flex(flex, center, center);
+    transition: border-color 250ms var(--timing-function-cubic-bezier);
+
+    .checkbox__check:checked + & {
+      background-color: var(--accent-color);
+      border: none;
+    }
+
+    .checkbox__check:focus + & {
+      border-color: var(--accent-color);
+    }
+  }
+}
+
+.checkbox__link {
+  @include font(14px, null, 1, 0.03em, null);
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.form__btn {
+  margin: 0 auto;
+}
+
+.form__btn--color {
+  color: var(--primary-white-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}

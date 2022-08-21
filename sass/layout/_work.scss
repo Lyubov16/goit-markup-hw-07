@@ -1,0 +1,35 @@
+.work {
+  padding-bottom: 94px;
+}
+
+.work__title {
+  margin-bottom: 50px;
+}
+
+.work__title--color {
+  color: var(--primary-text-color);
+}
+
+.work__list {
+  display: flex;
+  gap: 30px;
+}
+
+.work__item {
+  flex-basis: calc((100% - 2 * 30px) / 3);
+  position: relative;
+}
+
+.work__box {
+  @include position(absolute, null, null, 0, 0);
+  @include flex(flex, center, center);
+  width: 100%;
+  height: 70px;
+  background-color: var(--work__box-color);
+}
+
+.work__text {
+  @include font(14px, 700, 1.14, 0.03em, center);
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+}

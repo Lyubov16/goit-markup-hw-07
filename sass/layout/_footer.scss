@@ -1,0 +1,118 @@
+footer {
+  background-color: var(--primary-bg-color);
+  padding: 60px 0;
+}
+
+.footer__flex {
+  @include flex(flex, baseline, null);
+}
+
+.logo--white {
+  color: var(--primary-white-color);
+}
+
+.footer__address {
+  font-style: normal;
+  margin-top: 20px;
+}
+
+.footer__location {
+  color: var(--primary-white-color);
+  @include font(14px, null, 1.7, 0.03em, null);
+  margin-bottom: 9px;
+  @include transition(color, null, null, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.footer__item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.footer__contact {
+  @include font(14px, null, 1.7, 0.03em, null);
+  color: var(--white-translucent);
+  @include transition(color, null, null, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.footer__soc {
+  flex-direction: column;
+  margin-left: 70px;
+}
+
+.footer__text {
+  @include font(14px, 700, 1.14, 0.03em, null);
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+  margin-bottom: 20px;
+}
+
+.soc__link--footer {
+  background-color: var(--icon-translucent);
+  color: var(--primary-white-color);
+  @include transition(
+    null,
+    background-color,
+    null,
+    250ms,
+    cubic-bezier(0.4, 0, 0.2, 1)
+  );
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+  }
+}
+
+.footer__icons {
+  fill: currentColor;
+}
+
+.footer__box {
+  margin-left: auto;
+}
+
+.footer__form {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__input {
+  background-color: transparent;
+  border: 1px solid var(--input-border-transparent);
+  border-radius: 4px;
+  width: 358px;
+  height: 50px;
+  cursor: pointer;
+  padding: 15px 0 15px 16px;
+  color: var(--primary-white-color);
+  transition: border-color 250ms var(--timing-function-cubic-bezier);
+
+  &::placeholder {
+    @include font(16px, null, 1.25, 0.03em, null);
+    color: var(--white-translucent);
+    @include transition(color, null, null, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+  }
+  &:hover,
+  &:focus {
+    border-color: var(--accent-color);
+  }
+  &:hover::placeholder,
+  &:focus::placeholder {
+    color: var(--accent-color);
+  }
+}
+
+.footer__btn {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: var(--primary-white-color);
+  @include flex(flex, center, center);
+  gap: 10px;
+}

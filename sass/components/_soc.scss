@@ -1,0 +1,11 @@
+.soc {
+  @include flex(flex, null, center);
+  gap: 10px;
+  &__link {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    @include flex(flex, center, center);
+    cursor: pointer;
+  }
+}
